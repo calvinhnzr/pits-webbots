@@ -19,22 +19,27 @@
 				<form>
 					<label>
 						Vorname
-						<input type="text" />
+						<input type="text" required />
 					</label>
 					<label>
 						Nachname
-						<input type="text" />
+						<input type="text" required />
+					</label>
+					<label>
+						E-Mail
+						<input type="email" required />
 					</label>
 					<label>
 						Anzahl
-						<input type="number" min="1" />
+						<input type="number" min="1" value="1" required />
 					</label>
+
 					<label>
 						AGB
-						<input type="checkbox" />
+						<input type="checkbox" required />
 					</label>
 					<label>
-						<input type="submit" />
+						<input type="submit" required />
 					</label>
 				</form>
 			</main>
