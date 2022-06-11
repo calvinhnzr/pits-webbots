@@ -1,0 +1,27 @@
+#wrapper {
+	max-width: 9;
+}
+
+.concert {
+	outline: 1px solid red;
+	grid-column: span 1;
+}
+
+form {
+	outline: 1px solid;
+	grid-column: span 2;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+}
+
+label {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1.5rem;
+}
+
+input {
+	margin-top: 0.4rem;
+	height: 1.5rem;
+}
