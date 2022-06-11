@@ -6,7 +6,7 @@ const isBot = require("./middleware/isBot");
 
 app.use(express.static(__dirname));
 app.use(isBot);
-app.use(morgan("dev"));
+app.use(morgan("combined"));
 
 app.get("/", (req, res) => {
   console.log(req.botInfo);
