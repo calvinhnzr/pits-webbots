@@ -1,27 +1,29 @@
 // I want to create a webbbot using playwright
 const playwright = require("playwright");
 
-// const browserType = "chromium"; // chrome
+const browserType = "chromium"; // chrome
 // const browserType = "firefox"; // firefox
-const browserType = "webkit"; // safari
+// const browserType = "webkit"; // safari
 
 async function main() {
   // disable headless to see the browser's action
   const browser = await playwright[browserType].launch({ headless: false });
   const context = await browser.newContext();
   const page = await context.newPage(); //wait for the browser to create a new page by putting await
+  // await page.goto("https://ticketshop.onrender.com/"); //opening Google page
   await page.goto("https://pits-webbots.netlify.app/"); //opening Google page
   await page.waitForLoadState("load");
   await page.waitForTimeout(500);
   //
 
   const link = await page.$("a[href$='./pages/concert.html']"); //finding the link
+  // const link = await page.$("a[href$='/concert']"); //finding the link
   await link.click();
 
   const firstname = "WEB";
   const lastname = "BOT";
   const email = "hacker@webbots.com";
-  const count = "23";
+  const count = "69";
 
   await page.waitForLoadState("load");
 
@@ -76,7 +78,7 @@ async function main() {
 
   //
 
-  await page.waitForTimeout(10000);
+  await page.waitForTimeout(1000);
   await browser.close(); //close the browser once everything is done
 }
 main();

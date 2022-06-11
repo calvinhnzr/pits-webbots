@@ -1,16 +1,17 @@
 const express = require("express");
 const app = express();
+const morgan = require("morgan");
 
-const isBot = require('./middleware/isBot')
-
+const isBot = require("./middleware/isBot");
 
 app.use(express.static(__dirname));
+app.use(isBot);
+app.use(morgan("combined"));
 
 app.get("/", (req, res) => {
   console.log(req.botInfo);
   alert(req.botInfo);
   res.sendFile(__dirname + "/index.html");
-  
 });
 
 app.get("/concert", (req, res) => {
