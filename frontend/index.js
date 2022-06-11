@@ -1,5 +1,5 @@
-let button = document.getElementById("button")
 
-document.addEventListener("click", (e) => {
-  alert("click")
-})
+
+
+var element = document.getElementById('myElement');
+var topPos = element.getBoundingClientRect().top + window.scrollY;
