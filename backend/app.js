@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
-// const morgan = require("morgan");
+const morgan = require("morgan");
 
 const isBot = require("./middleware/isBot");
 
 app.use(express.static(__dirname));
 app.use(isBot);
-// app.use(morgan("combined"));
+app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
   console.log(req.botInfo);
